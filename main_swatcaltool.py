@@ -13,32 +13,67 @@ The general steps include:
 8. Determine the parameter set of the next set
 9. Loop again until the stitis
 
-The framework will follow these steps
+The framework will follow these steps.
+
+
+Usage instruction:
+1. Parameter determination:
+# Users are expected to determine which parameter to be included for
+# the calibration. 
+# This is done by setting the value of yes/no into 1 in the calPara.
+# set file. This is a json file, containing all commonly used files
+# for calibrating corresponding variables.
+
 """
 
+##########################################################################
+# Import modules #########################################################
+##########################################################################
+from pyscripts.ModUtil import install_and_import
 
-
-
-##############################################################################################
-# Module load
-# Reference: https://stackoverflow.com/questions/12332975/installing-python-module-within-code
-def install_and_import(package):
-    import importlib,  pip
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['install', package])
-
+from pyscripts.globVars import *
+from pyscripts.JSONUtil import parmToJSON
+from pyscripts.FIFDUtil import *
 
 # Check package installateion
-requiredPkg = ['fortranformat', 'pandas']
+requiredPkg = ['pandas']
+
 
 for ipkg in requiredPkg:
-    install_and_import('fortranformat')
+    install_and_import(ipkg)
+
+# Import local modules
 
 
-# Import packages
-import pandas as pd
-import sys, os
-import fortranformat as ff
+##########################################################################
+# Main function  #########################################################
+##########################################################################
+
+def main():
+
+    # Process parameter from set format into json
+    parmToJSON(fnParmSetFlow, fnParmJsonFlow)
+    parmToJSON(fnParmSetSed, fnParmJsonSed)
+    parmToJSON(fnParmSetN, fnParmJsonN)
+    parmToJSON(fnParmSetP, fnParmJsonP)
+
+
+    # Get subarea lists and hru lists from the TxtInOut
+    subLst = getListOfFiles(fdTxtInOut, "sub")
+    hruLst = getListOfFiles(fdTxtInOut, "hru")
+    
+    # Get groups of subareas
+
+
+
+
+
+
+
+
+
+
+
+
+
+main()

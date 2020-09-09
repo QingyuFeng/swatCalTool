@@ -1,0 +1,10 @@
+N	Symbol	File	units	x0	p_f	bl	bu
+31	ADJ_PKR	.bsn	-	1.25	1	0.5	2
+32	PRF	.bsn	-	1	1	0	2
+33	SPCON	.bsn	-	0.00505	1	0.0001	0.01
+34	SPEXP	.bsn	-	1.5	1	1	2
+35	SLSUBBSN	.hru	m	80	1	10	150
+36	USLE_P	.mgt	-	0.5	1	0	1
+37	CH_COV	.rte	-	0.4995	1	-0.001	1
+38	USLE_K	.sol	%	0.25	1	-0.5	0.5
+39	USLE_C	crop.dat	%	0.25	1	-0.5	0.5

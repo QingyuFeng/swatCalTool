@@ -1,0 +1,9 @@
+N	Symbol	File	units	x0	p_f	bl	bu
+58	PHOSKD	.bsn	m3/Mg	150	1	100	200
+59	PPERCO	.bsn	10m3/Mg	13.75	1	10	17.5
+60	PSP	.bsn	-	0.355	1	0.01	0.7
+61	LABP	.chm	mg/kg	5	1	0	10
+62	ORGP	.chm	kg-P/ha	10	1	0	20
+63	RS2	.swq	mg/m2-day	0.0505	1	0.001	0.1
+64	RS5	.swq	1/day	0.0505	1	0.001	0.1
+65	AI2	.wwq	-	0.015	1	0.01	0.02
